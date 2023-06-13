@@ -203,59 +203,68 @@ class _CarBody extends StatelessWidget {
               children: [
                 Container(
                   width: 90,
-                  child: Column(children: [
-                    Image.network(carSel.foto1.isNotEmpty && carSel.foto1 != "-"
-                        ? "http://192.168.0.105/projects/flutter_backend/${carSel.foto1}"
-                        : placeholderImage),
-                    TextButton(
-                      child: const Text('Tomar Foto'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (_) => CameraScreen(
-                                    ficha: c, fieldname: "foto1")));
-                      },
-                    ),
-                  ]),
+                  child: c == null
+                      ? Text("Debes guardar primero para poder tomar las fotos")
+                      : Column(children: [
+                          Image.network(carSel.foto1.isNotEmpty &&
+                                  carSel.foto1 != "-"
+                              ? "http://192.168.0.105/projects/flutter_backend/${carSel.foto1}"
+                              : placeholderImage),
+                          TextButton(
+                            child: const Text('Tomar Foto'),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (_) => CameraScreen(
+                                          ficha: c, fieldname: "foto1")));
+                            },
+                          ),
+                        ]),
                 ),
                 SizedBox(width: 10),
                 Container(
                   width: 90,
-                  child: Column(children: [
-                    Image.network(carSel.foto2.isNotEmpty && carSel.foto2 != "-"
-                        ? "http://192.168.0.105/projects/flutter_backend/${carSel.foto2}"
-                        : placeholderImage),
-                    TextButton(
-                      child: const Text('Tomar Foto'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (_) => CameraScreen(
-                                    ficha: c, fieldname: "foto2")));
-                      },
-                    ),
-                  ]),
+                  child: c == null
+                      ? Text("")
+                      : Column(children: [
+                          Image.network(carSel.foto2.isNotEmpty &&
+                                  carSel.foto2 != "-"
+                              ? "http://192.168.0.105/projects/flutter_backend/${carSel.foto2}"
+                              : placeholderImage),
+                          TextButton(
+                            child: const Text('Tomar Foto'),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (_) => CameraScreen(
+                                          ficha: c, fieldname: "foto2")));
+                            },
+                          ),
+                        ]),
                 ),
                 SizedBox(width: 10),
                 Container(
                   width: 90,
-                  child: Column(children: [
-                    Image.network(carSel.foto3.isNotEmpty && carSel.foto3 != "-"
-                        ? "http://192.168.0.105/projects/flutter_backend/${carSel.foto3}"
-                        : placeholderImage),
-                    TextButton(
-                      child: const Text('Tomar Foto'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (_) => CameraScreen(
-                                    ficha: c, fieldname: "foto3")));
-                      },
-                    ),
-                  ]),
+                  child: c == null
+                      ? Text("")
+                      : Column(children: [
+                          Image.network(carSel.foto3.isNotEmpty &&
+                                  carSel.foto3 != "-"
+                              ? "http://192.168.0.105/projects/flutter_backend/${carSel.foto3}"
+                              : placeholderImage),
+                          TextButton(
+                            child: const Text('Tomar Foto'),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (_) => CameraScreen(
+                                          ficha: c, fieldname: "foto3")));
+                            },
+                          ),
+                        ]),
                 ),
               ],
             ),
